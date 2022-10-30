@@ -1,6 +1,5 @@
 plugins {
     java
-    id("org.flywaydb.flyway") version "9.4.0"
 }
 
 group = "org.example"
@@ -11,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation("org.flywaydb:flyway-core:6.1.4")
     implementation("com.intellij:annotations:12.0")
     implementation("org.postgresql:postgresql:42.5.0")
 
@@ -20,13 +20,4 @@ dependencies {
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
-}
-
-flyway {
-    driver = "org.postgresql.Driver"
-    url = "jdbc:postgresql://localhost:5432/VK_HW4"
-    user = "postgres"
-    password = "postgres"
-    schemas = arrayOf("public")
-    defaultSchema = "public"
 }
