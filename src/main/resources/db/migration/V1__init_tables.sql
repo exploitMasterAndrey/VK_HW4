@@ -10,9 +10,14 @@ INSERT INTO student (first_name, last_name, phone) VALUES
 ('Sonya', 'Emelyanenko', '8-555-666-77-88'),
 ('Ilya', 'Okhripov', '8-666-777-88-99');
 
-INSERT INTO course (course_name, hours_count, teacher_id) VALUES
-('Economic Basics', 120, 1),
-('Marketing', 168, 1);
+INSERT INTO course (course_name, hours_count) VALUES
+('Economic Basics', 120),
+('Marketing', 168);
+
+INSERT INTO course_teacher (course_id, teacher_id) VALUES
+(1, 1),
+(1, 2),
+(2, 2);
 
 INSERT INTO schedule (start_time, course_id) VALUES
 ('2022-09-07 15:50:00', 1),

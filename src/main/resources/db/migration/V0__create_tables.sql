@@ -16,7 +16,12 @@ CREATE TABLE IF NOT EXISTS teacher(
 CREATE TABLE IF NOT EXISTS course(
     id SERIAL PRIMARY KEY,
     course_name VARCHAR(50),
-    hours_count INT,
+    hours_count INT
+);
+
+CREATE TABLE IF NOT EXISTS course_teacher(
+    id SERIAL PRIMARY KEY,
+    course_id INT REFERENCES course(id),
     teacher_id INT REFERENCES teacher(id)
 );
 
